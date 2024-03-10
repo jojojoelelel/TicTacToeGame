@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import TicTacToe from './Components/TicTacToe/TicTacToe';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styles from './Components/styles/App.module.css'
