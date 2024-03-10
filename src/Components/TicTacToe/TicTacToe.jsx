@@ -227,17 +227,17 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
             <div className={styles.textContainer}>
                 <h1 className={styles.title}>
                     {(xWins + oWins === 0) ? (
-                        <span>
+                        <div className={styles.dotContainer}>
                             {Array.from({ length: winTally }).map((_, index) => (
                                 <span key={index} className={styles.dotDeactivated}></span>
                             ))}
-                        </span>
+                        </div>
                     ) : (
-                        <span>
+                        <div className={styles.dotContainer}>
                             {Array.from({ length: winTally }).map((_, index) => (
                                 <span key={index} className={(matchHistory[index] === 'X') ? styles.xdotActivated : (matchHistory[index] === 'O') ? styles.odotActivated : styles.dotDeactivated}></span>
                             ))}
-                        </span>
+                        </div>
                     )}
                 </h1>
             </div>

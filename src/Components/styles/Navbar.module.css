@@ -5,14 +5,15 @@
     /* background-color: red; */
     align-items: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    padding-bottom: 0.8%;
 }
 
 .title {
-    font-size: 60px;
-    width: calc(87vw /3);
+    font-size: 8vh;
+    width: calc(100vw /3);
     /* height: 170px; */
-    padding: 0.5%;
+    /* padding-bottom: 1%; */
     font-weight: bold;
     /* background-color: red; */
     /* background-color: rgb(255, 255, 255); */

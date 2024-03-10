@@ -19,7 +19,7 @@
 }
 
 .aboutContainer h2 {
-    margin: 0.9em;
+    margin: 0.85em;
 }
 
 .aboutContainer h1{
@@ -27,6 +27,6 @@
 }
 
 .aboutContainer span, .aboutContainer li, .aboutContainer h2 {
-    font-size: 14.5px;
+    font-size: calc(0.5vw + 0.5vh);
     color: white;
 }

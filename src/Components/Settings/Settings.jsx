@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styles from '../styles/Settings.module.css'
-import { InputNumber, Slider, ConfigProvider, ColorPicker } from 'antd';
+import { InputNumber, Slider, ConfigProvider, ColorPicker } from 'antd'
+import { RedoOutlined } from '@ant-design/icons'
 
 const Settings = ({winTally, setwinTally, xColor, oColor, setxColor, setoColor, bodyStyles}) => {
 
@@ -14,6 +15,12 @@ const Settings = ({winTally, setwinTally, xColor, oColor, setxColor, setoColor, 
         }
         setwinTally(value);
     };
+
+    const resetSettings = () => {
+        setxColor('#4cc0ff')
+        setoColor('#af36d4')
+        setwinTally(3)
+    }
 
     return (
         <div className={styles.settingsScreen}>
@@ -56,9 +63,12 @@ const Settings = ({winTally, setwinTally, xColor, oColor, setxColor, setoColor, 
                 </div>
                 <div className={styles.settingsComponent}>
                     <h2 className={styles.xtitle}>X</h2>
-                    <ColorPicker defaultValue={xColor ? xColor : '#4cc0ff'} size='large' onChange={(c) => setxColor(c.toHexString())}/>
+                    <ColorPicker defaultValue={xColor} size='large' onChange={(c) => setxColor(c.toHexString())}/>
                     <h2 className={styles.otitle}>O</h2>
-                    <ColorPicker defaultValue={oColor ? oColor : '#af36d4'} size='large' onChange={(c) => setoColor(c.toHexString())}/>
+                    <ColorPicker defaultValue={oColor} size='large' onChange={(c) => setoColor(c.toHexString())}/>
+                </div>
+                <div className={styles.btnContainer}>
+                    <button className={styles.resetBtn} onClick={resetSettings}><RedoOutlined /></button>
                 </div>
             </div>   
             </ConfigProvider>        

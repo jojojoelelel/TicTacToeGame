@@ -58,3 +58,45 @@
     align-items: center;
 }
 
+.btnContainer {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    /* padding-bottom: 20px; */
+}
+
+.resetBtn {
+    width: 1.7em;
+    height: 1.7em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 100%;
+    /* background-color: #1f3540; */
+    background-color: white;
+    font-size: calc(1.5vh + 1.5vw); 
+    color: #141414;
+    /* margin-bottom: 0.2em; */
+    transition: 0.3s;
+}
+
+.resetBtn:hover {
+    box-shadow: 0 0 15px 1px white;
+    color: #141414;
+    transition: 0.3s ease;
+    animation-name: rotate;
+    animation-fill-mode: forwards;
+    animation-duration: 1.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+.resetBtn:active {
+    box-shadow: 0 0 20px 3px white;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-1turn);
+    }
+}
