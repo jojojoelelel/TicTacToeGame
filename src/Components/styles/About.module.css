@@ -18,11 +18,11 @@
     align-items: center;
 }
 
-h2 {
+.aboutContainer h2 {
     margin: 0.9em;
 }
 
-h1{
+.aboutContainer h1{
     color: white;
 }
 
