@@ -201,6 +201,7 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
             resetMatch();
             setmatchHistory([]);
         }
+        titleRef.current.innerHTML = 'Tic Tac Toe'
         // titleRef.current.innerHTML = 'Tic Tac Toe Game In <span>React</span>'
         box_array.forEach((e)=>{
             e.current.innerHTML = ''
