@@ -47,7 +47,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename='/TiTacToe'>
       <div className={styles.screen}>
         <div className={styles.header}>
           <Title titleRef={titleRef} winner={winner}/>
