@@ -19,9 +19,14 @@
 }
 
 h2 {
-    margin: 0.4em;
+    margin: 0.9em;
 }
 
-span, li, h2, h1 {
+h1{
+    color: white;
+}
+
+.aboutContainer span, .aboutContainer li, .aboutContainer h2 {
+    font-size: 14.5px;
     color: white;
 }
