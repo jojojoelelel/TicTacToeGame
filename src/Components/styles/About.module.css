@@ -1,0 +1,27 @@
+.aboutScreen {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+    justify-content: top;
+    align-items: center;
+}
+
+.aboutContainer {
+    background-color: #151e22;
+    box-shadow: 0 0 20px 1px rgb(10, 10, 10);
+    max-height: 75vh;
+    height: 60vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin: 0.4em;
+}
+
+span, li, h2, h1 {
+    color: white;
+}

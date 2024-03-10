@@ -1,0 +1,60 @@
+.settingsScreen {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+    justify-content: top;
+    align-items: center;
+}
+
+.settingsContainer {
+    background-color: #151e22;
+    box-shadow: 0 0 20px 1px rgb(10, 10, 10);
+    max-height: 75vh;
+    height: 60vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .button {
+    font-size: 25px;
+    width: 5.5em;
+    height: 10%;
+    font-weight: bold;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    border: none;
+
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.title {
+    color: white;
+}
+
+.xtitle {
+    color: var(--x-color);
+}
+
+.otitle {
+    color: var(--o-color);
+}
+
+.slider {
+    width: 30vw;
+}
+
+.settingsComponent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+

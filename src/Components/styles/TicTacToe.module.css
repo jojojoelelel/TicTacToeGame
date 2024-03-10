@@ -1,0 +1,243 @@
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    /* max-height: 100%; */
+    /* height: 100%; */
+    background-color: #151e22;
+    box-shadow: 0 0 20px 1px rgb(10, 10, 10);
+    border-radius: 50px;
+    /* max-width: 60vw; */
+    width: 30vw;
+    justify-content: space-evenly;
+}
+
+.board {
+    /* padding-top: 30px; */
+    /* height: 100%; */
+    height: inherit;
+    width: inherit;
+    /* margin: auto; */
+    /* margin-bottom: 8%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btnContainer {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    /* padding-bottom: 20px; */
+}
+
+.resetBtn {
+    width: 1.7em;
+    height: 1.7em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 60px;
+    /* background-color: #1f3540; */
+    background-color: white;
+    font-size: 40px;
+    color: #141414;
+    /* margin-bottom: 0.2em; */
+    transition: 0.3s;
+}
+
+.resetBtn:hover {
+    box-shadow: 0 0 20px 2px var(--hover-color);
+    color: var(--hover-color);
+    transition: 0.3s ease;
+    animation-name: rotate;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+.resetBtn:active {
+    box-shadow: 0 0 40px 6px var(--hover-color);
+}
+
+.boxes {
+    box-sizing: border-box;
+    /* border: 7px solid #0f1b21; */
+    background-color: #141414;
+}
+
+.boxes:hover {
+    /* border: 4px solid var(--hover-color); */
+    box-sizing: border-box;
+    box-shadow: inset 0 0 40px 15px var(--hover-color);
+    transition: 0.4s ease;
+    animation-name: vibrate;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.boxes:active {
+    background-color: white;
+    /* box-shadow: inset 0 0 25px 8px var(--hover-color); */
+}
+
+.boxes_x {
+    /* box-sizing: border-box; */
+    background-color: var(--x-color);
+}
+
+.boxes_o {
+    /* box-sizing: border-box; */
+    background-color: var(--o-color);
+}
+
+.boxes, .boxes_x, .boxes_o {
+    transition: 0.6s;
+    display: flex;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 12px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 45px white;
+    font-size: 40px;
+    animation-name: textpulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.row1, .row2, .row3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boxes img,
+.boxes_o img,
+.boxes_x img {
+    margin: 50px;
+}
+
+
+.title img {
+    padding: 0px 10px 0px 10px;
+    margin: 10px 10px 0 10px;
+    height: 40px;
+    border: 4px solid var(--winner-color);
+}
+
+.winBoxes {
+    background-color: white;
+    transition: 0.5s ease;
+    display: flex;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 12px;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: var(--winner-color);
+    box-shadow: 0 0 15px var(--winner-color);
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    animation-name: boxpulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.textContainer {
+    /* display: flex;
+    justify-content: space-evenly;
+    gap: 30%; */
+    width: inherit;
+}
+
+.title {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    height: 50px;
+}
+
+.winnerGlyph {
+    color: var(--winner-color);
+}
+
+.dotDeactivated {
+    display: inline-block;
+    height: 0.75em;
+    width: 0.75em;
+    border-radius: 100%;
+    background-color: #141414;
+    margin: 0 0.5em 0 0.5em;
+}
+
+.xdotActivated, .odotActivated {
+    display: inline-block;
+    height: 0.75em;
+    width: 0.75em;
+    border-radius: 100%;
+    margin: 0 0.5em 0 0.5em;
+    transition: 0.5s ease;
+}
+
+.odotActivated {
+    background-color: var(--o-color);
+}
+
+.xdotActivated {
+    background-color: var(--x-color);
+}
+
+/* ANIMATIONS */
+@keyframes textpulse {
+    0% {
+        /* box-sizing: border-box; */
+        text-shadow: 0 0 30px white;
+    }
+    50% {
+        /* box-sizing: border-box; */
+        text-shadow: 0 0 60px white;
+    }
+    100% {
+        /* box-sizing: border-box; */
+        text-shadow: 0 0 30px white;
+    }
+}
+
+@keyframes boxpulse {
+    0% {
+        /* box-sizing: border-box; */
+        box-shadow: 0 0 10px var(--winner-color);
+    }
+    50% {
+        box-sizing: border-box;
+        box-shadow: 0 0 20px var(--winner-color);
+    }
+    100% {
+        /* box-sizing: border-box; */
+        box-shadow: 0 0 10px  var(--winner-color);
+    }
+}
+
+@keyframes vibrate {
+    0% {
+        transform: rotate(4deg);
+    }
+    50% {
+        transform: rotate(-4deg);
+    }
+    100% {
+        transform: rotate(4deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-1turn);
+    }
+}
