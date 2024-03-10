@@ -47,7 +47,7 @@ function App() {
   }
 
   return (
-    <Router basename='/TiTacToe'>
+    <Router basename="/TicTacToeGame">
       <div className={styles.screen}>
         <div className={styles.header}>
           <Title titleRef={titleRef} winner={winner}/>
