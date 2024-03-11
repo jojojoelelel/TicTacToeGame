@@ -9,12 +9,16 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
     var bodyStyles = bodyStyles;
     bodyStyles.setProperty('--x-color', xColor);
     bodyStyles.setProperty('--o-color', oColor);
+    var roundWon = false;
 
     const [matchHistory, setmatchHistory] = useState([])
 
     useEffect(() => {
         checkWin()
-        console.log('matchhistory',matchHistory)
+        if(count===9 && !roundWon) {
+            console.log('draw')
+            titleRef.current.innerHTML = `Draw`
+        }
     },[data])
    
     const toggle = (e,num) => {
@@ -47,11 +51,6 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
     }
 
     const checkWin = () => {
-        // Draw
-        if(count===9) {
-            titleRef.current.innerHTML = `Draw`
-        }
-       
         for (let i = 0 ; i<9 ; i++) {
             var xwinCount = 0
             var owinCount = 0
@@ -78,11 +77,13 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
                         break;
                     }
                 }
-                owinCount = 0
-                xwinCount = 0
+                // owinCount = 0
+                // xwinCount = 0
             }
 
             if (i<=3-1) { // 1st row. Vertical win, n in a row
+                owinCount = 0
+                xwinCount = 0
                 for (let j = i; j < i + (3*(3-1)); j += 3) {
                     if (data[j]==='x' && data[j]===data[j+3]) {
                         xwinCount++
@@ -101,12 +102,14 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
                         break;
                     }
                 }
-                owinCount = 0
-                xwinCount = 0
+                // owinCount = 0
+                // xwinCount = 0
             }
             // Diagonal win, 2 corners
 
             if( i === 0 ) { // Top left corner
+                owinCount = 0
+                xwinCount = 0
                 for(let j = i; j < i + ((3-1)*(3+1)); j+=(3+1)) {
                     if (data[j]==='x' && data[j]===data[j+(3+1)]) {
                         xwinCount++
@@ -125,11 +128,13 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
                         break;
                     }
                 }
-                owinCount = 0
-                xwinCount = 0
+                // owinCount = 0
+                // xwinCount = 0
             }
 
             if( i === (3-1) ) { // Top right corner
+                owinCount = 0
+                xwinCount = 0
                 for(let j = i; j < i + ((3-1)*(3-1)); j+=(3-1)) {
                     if (data[j]==='x' && data[j]===data[j+(3-1)]) {
                         xwinCount++
@@ -148,15 +153,13 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
                         break;
                     }
                 }
-                owinCount = 0
-                xwinCount = 0
             }
         }
     }
 
     const wonGame = (winner, i, type) => {
-        console.log(i, type)
         setLock(true)
+        roundWon = true
 
         if (type==='h') {
             box_array[i].current.className = styles.winBoxes;
@@ -194,6 +197,7 @@ const TicTacToe = ({ box_array, bodyStyles, lock, setLock, count, setCount, data
     }
 
     const resetGame = () => {
+        roundWon = false;
         setLock(false);
         setCount(0);
         setData(['', '', '', '', '', '', '', '', '']);
